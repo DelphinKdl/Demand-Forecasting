@@ -77,7 +77,7 @@ The system implements a comprehensive machine learning pipeline with five distin
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd ml-project-blueprint
+cd Demand-Forecasting
 
 # Deploy all services with production configuration
 docker-compose up --build
@@ -103,11 +103,11 @@ docker-compose logs -f
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd ml-project-blueprint
+cd Demand-Forecasting
 
 # Create and activate conda environment
 conda env create -f environment.yml
-conda activate ml-blueprint
+conda activate bike-sharing
 
 # Train the model first (if not already trained)
 python app-ml/entrypoint/rain.py
@@ -131,7 +131,7 @@ python app.py
 ##  Project Architecture & Data Flow
 
 ```
-ml-project-blueprint/
+Demand-Forecasting/
 ├── 📁 app-ml/                           # Demand Forecasting Engine
 │   ├── 📁 entrypoint/                  # Production ML Services
 │   │   ├── prod_train.py               # Demand model training pipeline
