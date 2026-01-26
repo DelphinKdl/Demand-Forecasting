@@ -1,0 +1,19 @@
+# UI & Web Framework
+dash==3.0.4
+dash-bootstrap-components==1.6.0
+gunicorn==23.0.0
+
+# Plotting
+plotly==6.1.2
+
+# HTTP Requests
+requests==2.31.0
+
+# Core Data & Config
+numpy==1.26.4
+scikit-learn==1.4.0
+catboost==1.2.8
+pandas==2.2.2
+pyarrow==20.0.0
+pyyaml==6.0.2
+python-dateutil==2.8.2

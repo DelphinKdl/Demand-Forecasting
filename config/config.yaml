@@ -1,0 +1,78 @@
+ui: # user interface
+  default_lookback_hours: 12
+  update_interval_ms: 1000
+  axis_font_color: "#222"
+
+inference_api:
+  host: localhost
+  port: 5001
+  endpoint: /run-inference
+
+data_manager:
+  raw_data_folder: './data/raw_data/'
+  prod_data_folder: './data/prod_data/'
+  raw_database_name: 'database.parquet'
+  prod_database_name: 'database_prod.parquet'
+  real_time_data_prod_name: 'real_time_data_prod.parquet'
+  real_time_prediction_data_name: 'real_time_prediction.parquet'
+
+pipeline_runner:
+  batch_size: 30
+  model_path: 'models/prod/latest_model'
+  first_timestamp: '2012-08-07 12:00:00'
+  last_timestamp: '2012-12-31 23:00:00'
+  time_increment: '1h'
+
+preprocessing:
+  column_mapping:
+    'season': 'season'
+    'yr': 'year'
+    'mnth': 'month'
+    'hr': 'hour'
+    'weekday': 'week_day'
+    'workingday': 'working_day'
+    'weathersit': 'weather'
+    'temp': 'temperature'
+    'atemp': 'temperature_feel'
+    'hum': 'humidity'
+    'windspeed': 'wind_speed'
+    'cnt': 'bike_count'
+
+  drop_columns: [
+    'datetime', 'year', 'casual', 'registered'
+  ]
+
+feature_engineering:
+  lag_params:
+    'bike_count': [1, 2, 22, 23]
+    'hour': [1, 2, 3]
+    'week_day': [1, 2, 3]
+    'weather': [1, 2, 3]
+    'temperature': [1, 2, 3]
+    'humidity': [1, 2, 3]
+
+training:
+  target_params:
+    shift_period: 1
+    target_column: 'bike_count'
+    new_target_name: 'target'
+  train_fraction: 0.85
+  iterations: 100
+  loss_function: RMSE
+  verbose: 0
+  early_stopping_rounds: 100
+
+  optuna:
+    n_trials: 5
+    search_space:
+      learning_rate:
+        low: 0.01
+        high: 0.2
+        log: false
+      depth:
+        low: 3
+        high: 8
+      l2_leaf_reg:
+        low: 0.5
+        high: 5
+        log: false

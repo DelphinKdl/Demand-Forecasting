@@ -1,0 +1,28 @@
+/*
+custom.css
+
+This file allows you to customize the appearance of your Dash app.
+Add or modify CSS rules below to change fonts, colors, spacing, etc.
+
+Example: Change background color and font
+*/
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Example: Style all buttons */
+button {
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Add your custom styles below */ 
+.overview-list li {
+    margin-bottom: 10px;
+}

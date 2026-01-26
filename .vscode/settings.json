@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "./app-ml/src",
+        "./common",
+        "src",
+        "./src"
+    ],
+    "git.ignoreLimitWarning": true
+}

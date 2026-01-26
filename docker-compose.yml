@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # =============================================================================
+  # ML MODEL TRAINING SERVICE
+  # =============================================================================
+  # This service trains the ML model using the training data
+  # It runs once to create the model, then the inference service uses it
+  app-ml-train:
+    build:
+      context: .                    # Build context is the project root
+      dockerfile: app-ml/Dockerfile # Use the ML app's Dockerfile
+    command: ["python", "entrypoint/train.py"]  # Run the training script
+    volumes:
+      # Mount shared folders so data persists between container restarts
+      - ./data:/data               # Training and production data
+      - ./config:/config           # Configuration files
+      - ./models:/models           # Trained models storage
+
+  # =============================================================================
+  # ML INFERENCE API SERVICE
+  # =============================================================================
+  # This service provides the REST API for making predictions
+  # It loads the trained model and runs the ML pipeline in real-time
+  app-ml-inference-api:
+    build:
+      context: .                    # Build context is the project root
+      dockerfile: app-ml/Dockerfile # Use the ML app's Dockerfile
+    command: ["python", "entrypoint/inference_api.py"]  # Run the inference API
+    ports:
+      - "5001:5001"                # Expose port 5001 for API calls
+    volumes:
+      # Mount shared folders to access data, config, and trained models
+      - ./data:/data               # Production data and predictions
+      - ./config:/config           # Configuration files
+      - ./models:/models           # Access to trained models
+      # - ./common:/common           # Shared utility functions
+    depends_on:
+      - app-ml-train               # Wait for training to complete first
+
+  # =============================================================================
+  # WEB USER INTERFACE SERVICE
+  # =============================================================================
+  # This service provides the web dashboard for visualizing predictions
+  # It communicates with the inference API to trigger predictions
+  app-ui:
+    build:
+      context: .                    # Build context is the project root
+      dockerfile: app-ui/Dockerfile # Use the UI app's Dockerfile
+    ports:
+      - "8050:8050"                # Expose port 8050 for web access
+    environment:
+      # Override the API host for Docker networking
+      # In Docker, services can communicate using service names
+      - INFERENCE_API_HOST=app-ml-inference-api
+    volumes:
+      # Mount shared folders to access data and config
+      - ./data:/data               # Access to production data and predictions
+      - ./config:/config           # Configuration files
+      - ./models:/models           # Model metadata (if needed)
+      # - ./common:/common           # Shared utility functions
+    depends_on:
+      - app-ml-inference-api       # Wait for inference API to be ready
+
+# =============================================================================
+# DOCKER COMPOSE EXPLANATION
+# =============================================================================
+# This file defines 3 services that work together:
+#
+# 1. app-ml-train: Trains the ML model once
+# 2. app-ml-inference-api: Provides API for real-time predictions
+# 3. app-ui: Web dashboard for visualizing results
+#
+# Key concepts:
+# - volumes: Shared folders between host and containers
+# - ports: Expose container ports to host machine
+# - depends_on: Service startup order
+# - environment: Override configuration for Docker networking
+#
+# To run: docker-compose up
+# To stop: docker-compose down
+# To rebuild: docker-compose up --build
