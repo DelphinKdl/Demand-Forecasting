@@ -76,7 +76,7 @@ The system implements a comprehensive machine learning pipeline with five distin
 
 ```bash
 # Clone the repository
-git clone <your-repo-url> 
+git https://github.com/DelphinKdl/Demand-Forecasting.git
 cd Demand-Forecasting
 
 # Deploy all services with production configuration
