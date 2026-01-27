@@ -71,9 +71,6 @@ The system implements a comprehensive machine learning pipeline with five distin
 ---
 
 ##  Quick Start
----
-
-##  Quick Start
 
 ### Option 1: Running Application in Docker (Recommended)
 
