@@ -62,7 +62,7 @@ The system implements a comprehensive machine learning pipeline with five distin
 - **Time Increment**: Configurable time increment for prediction timestamps
 - **Data Structure**: Standardized output format for downstream processing
 
-### 🐳 Entrypoints
+### Entrypoints
 - **`app-ml/train.py`**: Model training entrypoint boith locally and in production
 - **`app-ml/inference.py`** Entrypoint to run inference pipeline locally
 - **`app-ml/inference-api.py`**: API for inference in production / on web-app
@@ -71,12 +71,15 @@ The system implements a comprehensive machine learning pipeline with five distin
 ---
 
 ##  Quick Start
+---
+
+##  Quick Start
 
 ### Option 1: Running Application in Docker (Recommended)
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone <your-repo-url> 
 cd Demand-Forecasting
 
 # Deploy all services with production configuration
@@ -102,7 +105,7 @@ docker-compose logs -f
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/DelphinKdl/Demand-Forecasting.git
 cd Demand-Forecasting
 
 # Create and activate conda environment
@@ -124,6 +127,7 @@ python app.py
 ```
 
 **Access the application:**
+-  **Live application**: [LIVE APP](http://24.199.85.63:8050)
 -  **UI Dashboard**: http://localhost:8050
 -  **Inference API**: http://localhost:5001
 
