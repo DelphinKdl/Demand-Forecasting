@@ -3,6 +3,7 @@
 ## A Machine Learning Application that forecasts hour-ahead bike rental demand across an entire city, enabling dynamic pricing optimization and revenue maximization.
 -  **Live Demo**: [LIVE APP](http://24.199.85.63:8050)
 
+![Demand Forecasting](images/demand-forecasting.png)
 ![User Interface](images/user-interface.png)
 
 ##  Executive Summary
