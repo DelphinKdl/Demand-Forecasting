@@ -1,10 +1,10 @@
 #  Bike Rental Demand Forecasting System
 
 ## A Machine Learning Application that forecasts hour-ahead bike rental demand across an entire city, enabling dynamic pricing optimization and revenue maximization.
--  **Live Demo**: [LIVE APP](http://24.199.85.63:8050)
+
 
 ![Demand Forecasting](images/demand-forecasting.png)
-![User Interface](images/user-interface.png)
+
 
 ##  Executive Summary
 
@@ -24,11 +24,14 @@ This **Real-Time Bike Rental Demand Forecasting System** solves a critical busin
 - **Feature Predictability**: **temp, season, weather, and workingday** emerged as the strongest predictors. In contrast, **windspeed** showed discrete behavior and weak correlation on the rentals.
 
 **Solution**: A real-time ML system that forecasts city-wide bike rental demand for the next hour, enabling:
+-  **Live Demo**: [LIVE APP](http://24.199.85.63:8050)
+
 - **Dynamic Pricing Optimization**: Real-time price adjustments based on demand forecasts
 - **Incentive Campaigns**: Targeted promotions during predicted low-demand periods
 - **Operational Planning**: Improved fleet utilization and supply-demand balance
 
 
+![User Interface](images/user-interface.png)
 
 ## Application architecture
 The architecture of the system is shown below:
