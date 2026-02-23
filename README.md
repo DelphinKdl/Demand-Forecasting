@@ -8,8 +8,7 @@
 
 ##  Executive Summary
 
-This **Real-Time Bike Rental Demand Forecasting System** solves a critical business problem for bike-sharing platforms operating across entire cities. By implementing a CatBoost regression model and Optuna-tuned hyperparameters, I reduced the forecasting error (MAE) by 51% compared to the baseline. The system provides hour-ahead demand predictions that drive dynamic pricing strategies, enabling revenue optimization and improved fleet utilization.
-
+This **Real-Time Bike Rental Demand Forecasting System** solves a critical business problem for bike-sharing platforms operating across entire cities. By implementing a **CatBoost regression model and Optuna-tuned hyperparameters**, I reduced the **forecasting error (MAE) by 51% compared to the baseline**. The system provides hours-ahead demand predictions that guide **dynamic pricing, helping you optimize revenue and improve fleet use**.
 
 ## Business Problem Solved
 
@@ -24,13 +23,12 @@ This **Real-Time Bike Rental Demand Forecasting System** solves a critical busin
 - **Feature Predictability**: **temp, season, weather, and workingday** emerged as the strongest predictors. In contrast, **windspeed** showed discrete behavior and weak correlation on the rentals.
 
 **Solution**: A real-time ML system that forecasts city-wide bike rental demand for the next hour, enabling:
--  **Live Demo**: [LIVE APP](http://24.199.85.63:8050)
 
 - **Dynamic Pricing Optimization**: Real-time price adjustments based on demand forecasts
 - **Incentive Campaigns**: Targeted promotions during predicted low-demand periods
 - **Operational Planning**: Improved fleet utilization and supply-demand balance
 
-
+**Live Demo**: [LIVE APP](http://24.199.85.63:8050)
 ![User Interface](images/user-interface.png)
 
 ## Application architecture
