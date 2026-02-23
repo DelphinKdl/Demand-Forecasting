@@ -18,7 +18,7 @@ This **Real-Time Bike Rental Demand Forecasting System** solves a critical busin
 - **Optimize Fleet**: Better plan supply-demand balance and bike distribution
 
 **Key Findings & Data Observations**: 
-- **Cyclical Demand Patterns**: The target shows strong daily and seasonal cycles—specifically, two sharp peaks at **7 AM and 5 PM**.
+- **Cyclical Demand Patterns**: The target shows strong daily and seasonal cycles, specifically two sharp peaks at **7 AM and 5 PM**.
 - **Weather & Temperature Sensitivity**: There is a clear positive correlation between temperature and rentals, while demand drops sharply during light snow/rain. Clear weather yields the highest rentals.
 - **Feature Predictability**: **temp, season, weather, and workingday** emerged as the strongest predictors. In contrast, **windspeed** showed discrete behavior and weak correlation on the rentals.
 
