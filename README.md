@@ -1,11 +1,5 @@
 #  Bike Rental Demand Forecasting System
 
-## A Machine Learning Application that forecasts hour-ahead bike rental demand across an entire city, enabling dynamic pricing optimization and revenue maximization.
-
-
-![Demand Forecasting](images/demand-forecasting.png)
-
-
 ##  Executive Summary
 
 This **Real-Time Bike Rental Demand Forecasting System** solves a critical business problem for bike-sharing platforms operating across entire cities. By implementing a **CatBoost regression model and Optuna-tuned hyperparameters**, I reduced the **forecasting error (MAE) by 51% compared to the baseline**. The system provides hours-ahead demand predictions that guide **dynamic pricing, helping you optimize revenue and improve fleet use**.
