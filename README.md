@@ -67,12 +67,11 @@ The system implements a comprehensive machine learning pipeline with five distin
 - **Data Structure**: Standardized output format for downstream processing
 
 ### Entrypoints
-- **`app-ml/train.py`**: Model training entrypoint boith locally and in production
-- **`app-ml/inference.py`** Entrypoint to run inference pipeline locally
-- **`app-ml/inference-api.py`**: API for inference in production / on web-app
-- **`app-ui/app.py`**: Interactive dashboard for demand reocasting monitoring
+- **`app-ml/entrypoint/train.py`**: Model training entrypoint both locally and in production
+- **`app-ml/entrypoint/inference.py`**: Entrypoint to run batch inference pipeline locally
+- **`app-ml/entrypoint/inference_api.py`**: API for real-time inference in production / on web-app
+- **`app-ui/app.py`**: Interactive dashboard for demand forecasting monitoring
 
----
 
 ##  Quick Start
 
@@ -114,7 +113,7 @@ conda env create -f environment.yml
 conda activate bike-sharing
 
 # Train the model first (if not already trained)
-python app-ml/entrypoint/rain.py
+python app-ml/entrypoint/train.py
 
 # Run inference in a loop 
 python app-ml/entrypoint/inference.py
